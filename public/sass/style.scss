@@ -1,0 +1,80 @@
+@import "variables";
+
+body {
+  color: $font-color;
+  font-family: $font-family;
+}
+
+h1 {
+  font-size: $h1_size;
+  color: $h1_color;
+}
+
+h2 {
+  font-size: $h2_size;
+  color: $h2_color;
+}
+
+h3 {
+  font-size: $h3_size;
+  color: $h3_color;
+}
+
+pre {
+  background: $code-background;
+  border: $code-border-size solid $code-border-color;
+  border-radius: $code-border-radius;
+  color: $code-color;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+nav {
+  text-align: center;
+  margin: 2em 0;
+  
+  ul {
+   
+    li {
+      display: inline;
+      margin: 0 5px;
+      border: 1px solid #ccc;
+      padding: 5px;
+      
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+    }
+  }
+}
+
+main {
+  margin: 0 1em;
+}
+
+.posts {
+  .post {
+    margin: 2em 0;
+  }
+}
+
+.post {
+  
+  .title {
+    margin: 0;  
+  }
+  
+  .info {
+    font-size: 0.8em;
+    padding-bottom: 5px;
+    
+    &.border {
+      border-bottom: 1px solid $border-color;
+    }
+    
+    .date, .author {
+      font-style: italic;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{% extends '_extends/master.html.twig' %}
+
+{% block page_content %}
+
+  <article class="post">
+      <h1 class="title">{{ post.title }}</h1>
+      <div class="info border">
+        Published by <span class="author">{{ post.author }}</span>
+        on <span class="date">{{ post.date }}</span>
+      </div>
+      {{ post.body | raw }}
+  </article>
+
+{% endblock %}
