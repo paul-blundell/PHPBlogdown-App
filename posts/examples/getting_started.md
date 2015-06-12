@@ -14,7 +14,6 @@ date = 2015-06-11 19:30
     
     // Get the subcategories for a specific category
     $subcategories = $blog->categories->get('category');
-    $subsubcategories = $blog->categories->get('category/subcategory');
     
     // Get all the posts in a category
     $posts = $blog->posts->get_all('category');

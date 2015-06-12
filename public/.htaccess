@@ -5,6 +5,15 @@ Options All
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)/$ /$1 [L,R=301]
 
+#
+# Exclude from Public files
+#
+RewriteCond %{REQUEST_URI} !^/apple-touch-icon.png
+RewriteCond %{REQUEST_URI} !^/favicon.ico
+RewriteCond %{REQUEST_URI} !^/favicon-144.png
+RewriteCond %{REQUEST_URI} !^/humans.txt
+RewriteCond %{REQUEST_URI} !^/robots.txt
+
 # Rewrite remainder of requests to
 # index.php to be processed by the platform
 #
