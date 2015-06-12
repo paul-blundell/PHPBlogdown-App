@@ -89,10 +89,7 @@ class App
     private function initRoutes()
     {
         $this->app->get('/', function() {
-            $this->app->render('category.html.twig', [
-                'category' => 'about',
-                'posts' => $this->blog->posts->get_all('about')
-            ]);
+            $this->app->render('index.html.twig');
         });
         
         $this->app->get('/:category', function($category) {

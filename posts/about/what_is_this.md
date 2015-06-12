@@ -1,14 +1,14 @@
 <!--
 summary = "PHP Blogdown is a quick and easy blogging platform. Upload your markdown documents and everything is created for you..."
 author = Paul Blundell
-date = 2015-06-11 11:30
+date = 2015-06-11 19:00
 -->
 
 PHPBlogdown was created to provide a very quick and easy blogging platform. All you need to do is write your markdown documents and upload them to your server.
 
 ## How does it work
 
-The core of the application does most of the work and will iterate through your directories creating categories and finding posts by searching for markdown files. The core then simply returns arrays which are processed by your application.
+The core of the `application` does most of the work and will iterate through your directories creating categories and finding posts by searching for markdown files. The core then simply returns arrays which are processed by your application.
 
 For example, the snippet below will retrieve all categories:
 

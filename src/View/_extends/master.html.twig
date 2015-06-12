@@ -6,13 +6,15 @@
   <meta name="keywords" content="" />
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/markdown.css">
 </head>
 <body>
     
-<header></header> 
+<header></header>
 
 <nav>
   <ul>
+    <li><a href="/">Home</a></li>
     {% for category in categories %}
     <li><a href="/{{ category.id }}">{{ category.name }}</a></li>
     {% endfor %}
