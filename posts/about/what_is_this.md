@@ -13,25 +13,22 @@ The core of the `application` does most of the work and will iterate through you
 For example, the snippet below will retrieve all categories:
 
     $blog = new PHPBlogdown\Blog('config.ini');
-    $categories = $blog->categories->get_all();
+    $categories = $blog->get_categories();
     
-And this will get a list of posts in the category:
+This will get a list of posts in the category:
 
-    $posts = $blog->posts->get_all('category_name');
+	$category = $categories->get('category_name');
+    $posts = $blog->get_posts($category);
+	
+	foreach ($posts AS $post)
+		echo $post->title;
     
 The following will get a specific post:
 
-    $post = $blog->posts->get('about', 'what_is_this');
+	$category = $categories->get('category_name');
+    $post = $blog->get_post($category, 'what_is_this');
 
-which will return an array structured as follows:
-
-    [
-        'id' => 'what_is_this',
-        'title' => 'What Is This',
-        'summary' => 'PHP Blogdown is..<ommitted>',
-        'author' => 'Paul Blundell',
-        'body' => '<html_output>'
-    ]
+which will return a `Post` object.
     
 The posts metadata, summary, autor, etc. is defined at the top of the markdown document, like so:
 
@@ -43,10 +40,10 @@ The posts metadata, summary, autor, etc. is defined at the top of the markdown d
 
 This must be the first HTML-style comment in the document. This is processed by PHP Blogdown as if it were an INI file, so you can add as much meta information as needed and it will be returned in the array.
 
-## Why should I use this
+## Why should I use this?
 
-So, why should you use this? I don't know. If you think it suits your needs then go ahead and use it. This was created for a quick blog as all the others were very bloated, I wanted something lightweight, fast, allowed me to just write markdown
-documents and use composer so I could easily integrate it into other applications.
+I don't know. If you think it suits your needs then go ahead and use it. This was created for a quick blog as all the others were very bloated, I wanted something lightweight and allowed me to just write markdown
+documents.
 
 - Install in seconds.
 - Just upload your markdown files and your done.

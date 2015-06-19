@@ -8,7 +8,7 @@
         Published by <span class="author">{{ post.author }}</span>
         on <span class="date">{{ post.date }}</span>
       </div>
-      {{ post.body | raw }}
+      {{ post.get_body() | raw }}
   </article>
 
 {% endblock %}

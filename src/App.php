@@ -30,7 +30,7 @@ class App
      * @var Blog
      */
     private $blog;
-    
+
     /**
      * Run the App
      */
@@ -78,9 +78,7 @@ class App
     private function initGlobals()
     {
         $twig = $this->app->view->getEnvironment();
-        $categories = $this->blog->categories->get_all();
-        ksort($categories);
-        $twig->addGlobal('categories', $categories); 
+        $twig->addGlobal('categories', $this->blog->get_categories());
     }
     
     /**
@@ -92,16 +90,18 @@ class App
             $this->app->render('index.html.twig');
         });
         
-        $this->app->get('/:category', function($category) {
+        $this->app->get('/:category', function($category_id) {
+            $category = $this->blog->get_categories()->get($category_id);
             $this->app->render('category.html.twig', [
-                'category' => $category,
-                'posts' => $this->blog->posts->get_all($category)
+                'category' => $category_id,
+                'posts' => $this->blog->get_posts($category)
             ]);
         });
         
-        $this->app->get('/:category/:post', function($catgeory, $post) {
+        $this->app->get('/:category/:post', function($category_id, $post) {
+            $category = $this->blog->get_categories()->get($category_id);
             $this->app->render('post.html.twig', [
-                'post' =>  $this->blog->posts->get($catgeory, $post)
+                'post' =>  $this->blog->get_post($category, $post)
             ]);
         });
     }
