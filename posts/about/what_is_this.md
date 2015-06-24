@@ -4,11 +4,9 @@ author = Paul Blundell
 date = 2015-06-11 19:00
 -->
 
-PHPBlogdown was created to provide a very quick and easy blogging platform. All you need to do is write your markdown documents and upload them to your server.
-
 ## How does it work
 
-The core of the `application` does most of the work and will iterate through your directories creating categories and finding posts by searching for markdown files. The core then simply returns arrays which are processed by your application.
+The core of the `application` does most of the work and will iterate through your directories creating categories and finding posts by searching for markdown files. The core then simply returns objects which are processed by your application.
 
 For example, the snippet below will retrieve all categories:
 
@@ -42,10 +40,6 @@ This must be the first HTML-style comment in the document. This is processed by 
 
 ## Why should I use this?
 
-I don't know. If you think it suits your needs then go ahead and use it. This was created for a quick blog as all the others were very bloated, I wanted something lightweight and allowed me to just write markdown
-documents.
-
-- Install in seconds.
-- Just upload your markdown files and your done.
-- It's fast.
-- It's lightweight, the core is only 1.5kb (before installing dependencies).
+I don't know. If you think it suits your needs then go ahead and use it.
+Other better options are available (Jekyll) but perhaps this will be of
+use to someone.
